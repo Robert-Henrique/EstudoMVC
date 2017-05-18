@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo MVC</title>
+
+    <link href="~/Content/css/entypo.css" rel="stylesheet" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/mouldifi-core.css" rel="stylesheet" />
+    <link href="~/Content/css/mouldifi-forms.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+</head>
+<body>
+    <div class="page-container">
+        <div class="page-sidebar">
+            <!-- Site header  -->
+            <header class="site-header">
+                <div class="site-logo"><a href="~/Home">Estudo MVC</a></div>
+                <div class="sidebar-collapse hidden-xs"><a class="sidebar-collapse-icon" href="#"><i class="icon-menu"></i></a></div>
+                <div class="sidebar-mobile-menu visible-xs"><a data-target="#side-nav" data-toggle="collapse" class="mobile-menu-icon" href="#"><i class="icon-menu"></i></a></div>
+            </header>
+            <!-- /site header -->
+            <!-- Main navigation -->
+            <ul id="side-nav" class="main-menu navbar-collapse collapse">
+                <li class="has-sub active">
+                    <a href="~/Home"><i class="icon-gauge"></i><span class="title">Dashboard</span></a>
+                    <ul class="nav collapse">
+                        <li><a href="~/Home"><span class="title">Home</span></a></li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a href="~/Home"><i class="icon-layout"></i><span class="title">SS - Sistema de Segurança</span></a>
+                    <ul class="nav collapse">
+                        <li><a href="~/Home"><span class="title">Permissão</span></a></li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a href="~/Cliente"><i class="icon-layout"></i><span class="title">ADM - Administrativo</span></a>
+                    <ul class="nav collapse">
+                        <li><a href="~/Cliente"><span class="title">Cliente</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /main navigation -->
+        </div>
+        <!-- /page sidebar -->
+        <!-- Main container -->
+        <div class="main-container gray-bg">
+
+            <!-- Main header -->
+            <div class="main-header row">
+                <div class="col-sm-6 col-xs-7">
+                    <div class="col-sm-6 col-xs-7">
+
+                        <!-- User info -->
+                        <ul class="user-info pull-left">
+                            <li class="profile-info dropdown">
+                                <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false"> <img width="44" class="img-circle avatar" alt="" src="~/Content/img/man-3.jpg">Jailson Mendes <span class="caret"></span></a>
+
+                                <!-- User action menu -->
+                                <ul class="dropdown-menu">
+
+                                    <li><a href="#/"><i class="icon-user"></i>My profile</a></li>
+                                    <li><a href="#/"><i class="icon-mail"></i>Messages</a></li>
+                                    <li><a href="#"><i class="icon-clipboard"></i>Tasks</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#"><i class="icon-cog"></i>Account settings</a></li>
+                                    <li><a href="#"><i class="icon-logout"></i>Logout</a></li>
+                                </ul>
+                                <!-- /user action menu -->
+
+                            </li>
+                        </ul>
+                        <!-- /user info -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /main header -->
+            <!-- Main content -->
+            <div class="main-content">
+                @RenderBody()
+
+                <!-- Footer -->
+                <footer class="footer-main">
+                    &copy; 2017 <strong>Estudo MVC</strong> Pombo <a target="_blank" href="#/">Sistemas</a>
+                </footer>
+                <!-- /footer -->
+
+            </div>
+            <!-- /main content -->
+
+        </div>
+        <!-- /main container -->
+
+    </div>
+    <!-- /page container -->
+
+    <!--Load JQuery-->
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/plugins/metismenu/jquery.metisMenu.js"></script>
+    <script src="~/Content/js/plugins/blockui-master/jquery-ui.js"></script>
+    <script src="~/Content/js/plugins/blockui-master/jquery.blockUI.js"></script>
+    <script src="~/Content/js/functions.js"></script>
+</body>
+</html>
