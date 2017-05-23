@@ -15,6 +15,7 @@ namespace Intranet.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        //teste
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
