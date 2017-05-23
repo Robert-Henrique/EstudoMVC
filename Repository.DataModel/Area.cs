@@ -11,5 +11,8 @@ namespace Repository.DataModel
 
         [Required]
         public string Nome { get; set; }
+
+        [Required]
+        public bool Ativo { get; set; }
     }
 }

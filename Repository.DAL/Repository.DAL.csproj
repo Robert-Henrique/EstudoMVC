@@ -52,9 +52,9 @@
     <Compile Include="Context\DbTeste.cs" />
     <Compile Include="Context\IUnitOfWork.cs" />
     <Compile Include="Context\UnitOfWork.cs" />
-    <Compile Include="Migrations\201705230251009_Teste.cs" />
-    <Compile Include="Migrations\201705230251009_Teste.Designer.cs">
-      <DependentUpon>201705230251009_Teste.cs</DependentUpon>
+    <Compile Include="Migrations\201705231330531_Area.cs" />
+    <Compile Include="Migrations\201705231330531_Area.Designer.cs">
+      <DependentUpon>201705231330531_Area.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,8 +72,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705230251009_Teste.resx">
-      <DependentUpon>201705230251009_Teste.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705231330531_Area.resx">
+      <DependentUpon>201705231330531_Area.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
