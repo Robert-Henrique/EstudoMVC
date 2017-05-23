@@ -66,9 +66,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Repository.DataModel\DataModel.csproj">
+    <ProjectReference Include="..\Repository.DataModel\Repository.DataModel.csproj">
       <Project>{266E800F-8E21-4E79-B605-DEF78C47E178}</Project>
-      <Name>DataModel</Name>
+      <Name>Repository.DataModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

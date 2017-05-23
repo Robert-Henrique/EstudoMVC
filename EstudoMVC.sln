@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intranet", "Intranet\Intranet.csproj", "{1DAB49E7-7919-4BC5-A1E7-A2D2BC9958D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModel", "Repository.DataModel\DataModel.csproj", "{266E800F-8E21-4E79-B605-DEF78C47E178}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.DataModel", "Repository.DataModel\Repository.DataModel.csproj", "{266E800F-8E21-4E79-B605-DEF78C47E178}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "Repository.DAL\DAL.csproj", "{B932A273-2642-4A9C-8857-BFEF4EE9E2F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.DAL", "Repository.DAL\Repository.DAL.csproj", "{B932A273-2642-4A9C-8857-BFEF4EE9E2F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{622C53ED-52C0-4BD0-BB65-423B1A60CCA4}"
 EndProject
