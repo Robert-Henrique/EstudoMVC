@@ -23,7 +23,12 @@ namespace Intranet.Controllers.Architecture
         {
             Business = business;
         }
-        
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         [HttpGet]
         public virtual ActionResult Cadastrar()
         {
