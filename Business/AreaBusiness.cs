@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Business
 {
+    //adicionar innjeção de dependencia
     public class AreaBusiness
     {
 
