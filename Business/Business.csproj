@@ -41,7 +41,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaBusiness.cs" />
+    <Compile Include="Architecture\BaseBusiness.cs" />
+    <Compile Include="Architecture\BusinessException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Repository.DAL\Repository.DAL.csproj">
+      <Project>{B932A273-2642-4A9C-8857-BFEF4EE9E2F8}</Project>
+      <Name>Repository.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository.DataModel\Repository.DataModel.csproj">
+      <Project>{266E800F-8E21-4E79-B605-DEF78C47E178}</Project>
+      <Name>Repository.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{7A5BFFA9-E72E-4186-9F4F-82B005D30B44}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

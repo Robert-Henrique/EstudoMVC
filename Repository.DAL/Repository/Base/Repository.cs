@@ -1,50 +1,79 @@
 ﻿using Repository.DAL.Context;
 using System;
 using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Security;
 
 namespace Repository.DAL.Repository.Base
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, new()
+    public sealed class Repository<T> : IRepository<T> where T : class
     {
-        readonly DbContext _dbContext;
+        private DbContext _contexto;
 
-        public Repository(IUnitOfWork unitOfWork)
+        private DbContext Contexto
         {
-            _dbContext = unitOfWork.Context;
+            get
+            {
+                return _contexto;
+            }
+            set
+            {
+                _contexto = value;
+            }
+        }
+        
+        public void Attach(T entidade)
+        {
+            Contexto.Set<T>().Attach(entidade);
+        }
+        
+        public void Detach(object entidade)
+        {
+            ((IObjectContextAdapter)Contexto).ObjectContext.Detach(entidade);
+        }
+        
+        public IQueryable<T> Obter(int id)
+        {
+            IQueryable<T> query = Contexto.Set<T>().Where(string.Format("Id = {0}", id));
+            ((IObjectContextAdapter)Contexto).ObjectContext.Refresh(RefreshMode.StoreWins, query);
+
+            return query;
         }
 
-        public IQueryable<TEntity> GetAll()
+        public IQueryable<T> Obter(bool noTraking = false)
         {
-            return _dbContext.Set<TEntity>();
+            IQueryable<T> query = Contexto.Set<T>();
+            return query;
         }
 
-        public IQueryable<TEntity> Get(Func<TEntity, bool> predicate)
+        public IQueryable<T> Obter(Expression<Func<T, bool>> criterios, bool refreshQuery = false)
         {
-            return GetAll().Where(predicate).AsQueryable();
+            IQueryable<T> query = Contexto.Set<T>().Where(criterios);
+            return query;
         }
 
-        public TEntity Find(params object[] key)
+        public void Cadastrar(T entidade)
         {
-            return _dbContext.Set<TEntity>().Find(key);
+            Contexto.Configuration.AutoDetectChangesEnabled = false;
+            Contexto.Set<T>().Add(entidade);
+            Contexto.Configuration.AutoDetectChangesEnabled = true;
         }
 
-        public void Update(TEntity obj)
+        public void Alterar(T entidade)
         {
-            _dbContext.Entry(obj).State = EntityState.Modified;
+            Contexto.Configuration.AutoDetectChangesEnabled = false;
+            Contexto.Entry(entidade).State = EntityState.Modified;
+            Contexto.Configuration.AutoDetectChangesEnabled = true;
         }
 
-        public void Save(TEntity obj)
+        public void Excluir(T entidade)
         {
-            _dbContext.Set<TEntity>().Add(obj);
-        }
-
-        public void Remove(Func<TEntity, bool> predicate)
-        {
-            _dbContext.Set<TEntity>()
-                .Where(predicate).ToList()
-                .ForEach(del => _dbContext.Set<TEntity>().Remove(del));
-
+            Contexto.Configuration.AutoDetectChangesEnabled = false;
+            Contexto.Set<T>().Remove(entidade);
+            Contexto.Configuration.AutoDetectChangesEnabled = true;
         }
     }
 }

@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Business;
+using Intranet.Controllers.Architecture;
+using Repository.DataModel;
+using System;
 using System.Web.Mvc;
 
 namespace Intranet.Controllers
 {
-    public class AreaController : Controller
+    public class AreaController : TypedController<Area, AreaBusiness>
     {
-        // GET: Area
-        public ActionResult Index()
+        public AreaController(AreaBusiness business) : base(business) { }
+
+        public override ActionResult Filtrar(string filtro, int pageNumber, int pageSize)
         {
-            return View();
+            throw new NotImplementedException();
         }
     }
 }

@@ -196,6 +196,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Architecture\BaseController.cs" />
+    <Compile Include="Controllers\Architecture\TypedController.cs" />
     <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -335,6 +337,24 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{622C53ED-52C0-4BD0-BB65-423B1A60CCA4}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository.DAL\Repository.DAL.csproj">
+      <Project>{B932A273-2642-4A9C-8857-BFEF4EE9E2F8}</Project>
+      <Name>Repository.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repository.DataModel\Repository.DataModel.csproj">
+      <Project>{266E800F-8E21-4E79-B605-DEF78C47E178}</Project>
+      <Name>Repository.DataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{7A5BFFA9-E72E-4186-9F4F-82B005D30B44}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

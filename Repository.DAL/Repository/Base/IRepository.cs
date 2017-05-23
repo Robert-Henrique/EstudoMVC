@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace Repository.DAL.Repository.Base
 {
-    public interface IRepository<TEntity> where TEntity : class, new()
+    public interface IRepository<T> where T : class
     {
-        IQueryable<TEntity> GetAll();
-        IQueryable<TEntity> Get(Func<TEntity, bool> predicate);
-        TEntity Find(params object[] key);
-        void Update(TEntity obj);
-        void Save(TEntity obj);
-
-        void Remove(Func<TEntity, bool> predicate);
+        void Alterar(T entidade);
+        void Attach(T entidade);
+        void Cadastrar(T entidade);
+        void Detach(object entidade);
+        void Excluir(T entidade);
+        IQueryable<T> Obter(bool noTraking = false);
+        IQueryable<T> Obter(int id);
+        IQueryable<T> Obter(Expression<Func<T, bool>> criterios, bool refreshQuery = false);
     }
 }
