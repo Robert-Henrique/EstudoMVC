@@ -11,20 +11,22 @@ namespace Repository.DAL.Repository.Base
 {
     public sealed class Repository<T> : IRepository<T> where T : class
     {
-        private DbContext _contexto;
+        //public BaseBusiness(IRepository<T> repository)
+        //{
+        //    Repository = repository;
+        //}
 
-        private DbContext Contexto
+        public Repository(DbContext dbContext)
         {
-            get
-            {
-                return _contexto;
-            }
-            set
-            {
-                _contexto = value;
-            }
+            Contexto = dbContext;
         }
-        
+
+        protected DbContext Contexto
+        {
+            get;
+            private set;
+        }
+
         public void Attach(T entidade)
         {
             Contexto.Set<T>().Attach(entidade);
@@ -74,6 +76,16 @@ namespace Repository.DAL.Repository.Base
             Contexto.Configuration.AutoDetectChangesEnabled = false;
             Contexto.Set<T>().Remove(entidade);
             Contexto.Configuration.AutoDetectChangesEnabled = true;
+        }
+
+        public void Commit()
+        {
+            Contexto.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            Contexto.Dispose();
         }
     }
 }

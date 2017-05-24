@@ -10,8 +10,22 @@
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/css/mouldifi-core.css" rel="stylesheet" />
     <link href="~/Content/css/mouldifi-forms.css" rel="stylesheet" />
+    <script src="~/Content/js/jquery.min.js"></script>
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Scripts/knockout-2.2.0.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/plugins/metismenu/jquery.metisMenu.js"></script>
+    <script src="~/Content/js/plugins/blockui-master/jquery-ui.js"></script>
+    <script src="~/Content/js/plugins/blockui-master/jquery.blockUI.js"></script>
+    <script src="~/Content/js/functions.js"></script>
+    <script src="~/Scripts/Intranet/area.js"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var viewModel = new Area();
+            ko.applyBindings(viewModel);
+        });
+    </script>
 </head>
 <body>
     <div class="page-container">
@@ -24,24 +38,9 @@
             </header>
             <!-- /site header -->
             <!-- Main navigation -->
-            <ul id="side-nav" class="main-menu navbar-collapse collapse">
+            <ul id="side-nav" class="main-menu navbar-collapse collapse" data-bind="foreach: Areas">
                 <li class="has-sub active">
-                    <a href="~/Home"><i class="icon-gauge"></i><span class="title">Dashboard</span></a>
-                    <ul class="nav collapse">
-                        <li><a href="~/Home"><span class="title">Home</span></a></li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a href="~/Home"><i class="icon-layout"></i><span class="title">SS - Sistema de Segurança</span></a>
-                    <ul class="nav collapse">
-                        <li><a href="~/Home"><span class="title">Permissão</span></a></li>
-                    </ul>
-                </li>
-                <li class="has-sub">
-                    <a href="~/Cliente"><i class="icon-layout"></i><span class="title">ADM - Administrativo</span></a>
-                    <ul class="nav collapse">
-                        <li><a href="~/Cliente"><span class="title">Cliente</span></a></li>
-                    </ul>
+                    <a href="~/Home"><i class="icon-layout"></i><span class="title" data-bind="text: Nome"></span></a>
                 </li>
             </ul>
             <!-- /main navigation -->
@@ -98,13 +97,6 @@
 
     </div>
     <!-- /page container -->
-
     <!--Load JQuery-->
-    <script src="~/Content/js/jquery.min.js"></script>
-    <script src="~/Content/js/bootstrap.min.js"></script>
-    <script src="~/Content/js/plugins/metismenu/jquery.metisMenu.js"></script>
-    <script src="~/Content/js/plugins/blockui-master/jquery-ui.js"></script>
-    <script src="~/Content/js/plugins/blockui-master/jquery.blockUI.js"></script>
-    <script src="~/Content/js/functions.js"></script>
 </body>
 </html>

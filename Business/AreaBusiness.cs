@@ -1,9 +1,6 @@
 ﻿using Repository.DataModel;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Repository.DAL.Repository.Base;
 using System.Linq.Expressions;
 using Utility;

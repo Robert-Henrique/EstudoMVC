@@ -64,9 +64,8 @@ namespace Intranet.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>));
             kernel.Bind(typeof(DbContext)).To(typeof(DbTeste));
-            kernel.Bind(typeof(IUnitOfWork)).To(typeof(UnitOfWork)).InRequestScope();
+            kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>));
         }
     }
 }

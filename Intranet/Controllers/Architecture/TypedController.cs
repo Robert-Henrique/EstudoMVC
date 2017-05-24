@@ -93,10 +93,13 @@ namespace Intranet.Controllers.Architecture
             return new EmptyResult();
         }
 
-        [HttpPost]
-        public virtual ActionResult Obter(string id)
+        [HttpGet]
+        public virtual JsonResult Obter(int? Id)
         {
-            return Json(Business.Obter(id));
+            if (Id.HasValue)
+                return Json(Business.Obter(Convert.ToInt32(Id)), JsonRequestBehavior.AllowGet);
+
+            return Json(Business.Obter().ToList(), JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

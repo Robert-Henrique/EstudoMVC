@@ -50,8 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\DbTeste.cs" />
-    <Compile Include="Context\IUnitOfWork.cs" />
-    <Compile Include="Context\UnitOfWork.cs" />
     <Compile Include="Migrations\201705231330531_Area.cs" />
     <Compile Include="Migrations\201705231330531_Area.Designer.cs">
       <DependentUpon>201705231330531_Area.cs</DependentUpon>
