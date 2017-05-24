@@ -15,9 +15,17 @@ namespace Repository.DataModel
         public int Id { get; set; }
 
         [Required]
+        public int AreaId { get; set; }
+
+        [Required]
+        public int PermissaoId { get; set; }
+
+        [Required]
         public string Nome { get; set; }
 
         [Required]
         public bool Ativo { get; set; }
+
+        public virtual Area Area { get; set; }
     }
 }
