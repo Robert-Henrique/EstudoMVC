@@ -21,7 +21,26 @@ namespace Repository.DataModel
         public int PermissaoId { get; set; }
 
         [Required]
+        [MaxLength(80)]
         public string Nome { get; set; }
+
+        [Required]
+        public int Nivel { get; set; }
+
+        [Required]
+        public int Tipo { get; set; }
+
+        [Required]
+        public int Ordem { get; set; }
+
+        [MaxLength(80)]
+        public string ControllerName { get; set; }
+
+        [MaxLength(80)]
+        public string ActionName { get; set; }
+
+        [MaxLength(80)]
+        public string PermissionName { get; set; }
 
         [Required]
         public bool Ativo { get; set; }
