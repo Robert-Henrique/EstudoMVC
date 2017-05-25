@@ -59,6 +59,7 @@
     <Compile Include="AreaBusiness.cs" />
     <Compile Include="Architecture\BaseBusiness.cs" />
     <Compile Include="Architecture\BusinessException.cs" />
+    <Compile Include="PermissaoBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

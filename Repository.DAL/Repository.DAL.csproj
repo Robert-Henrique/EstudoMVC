@@ -54,6 +54,10 @@
     <Compile Include="Migrations\201705250207064_Create_DataBase.Designer.cs">
       <DependentUpon>201705250207064_Create_DataBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705250222198_Tabela_Permissao.cs" />
+    <Compile Include="Migrations\201705250222198_Tabela_Permissao.Designer.cs">
+      <DependentUpon>201705250222198_Tabela_Permissao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Base\DynamicQueryable.cs" />
@@ -73,6 +77,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705250207064_Create_DataBase.resx">
       <DependentUpon>201705250207064_Create_DataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705250222198_Tabela_Permissao.resx">
+      <DependentUpon>201705250222198_Tabela_Permissao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

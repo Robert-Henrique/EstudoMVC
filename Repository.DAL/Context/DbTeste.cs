@@ -7,6 +7,9 @@ namespace Repository.DAL.Context
     {
         public DbTeste() : base("DbTeste") { }
 
-        public DbSet<Area> Areas { get; set; }
+        public DbSet<Area> Area { get; set; }
+        public DbSet<Permissao> Permissao { get; set; }
+        public DbSet<Perfil> Perfil { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
     }
 }
