@@ -22,7 +22,7 @@ namespace Repository.DAL.Context
                {
                    cs.MapLeftKey("UsuarioId");
                    cs.MapRightKey("PermissaoId");
-                   cs.ToTable("PermissaoUsuario");
+                   cs.ToTable("UsuarioPermissao");
                });
 
             modelBuilder.Entity<Perfil>()

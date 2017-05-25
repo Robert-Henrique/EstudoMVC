@@ -19,8 +19,7 @@ namespace Repository.DataModel
         [Required]
         public int AreaId { get; set; }
 
-        [Required]
-        public int PermissaoId { get; set; }
+        public int? PermissaoId { get; set; }
 
         [Required]
         [MaxLength(80)]
