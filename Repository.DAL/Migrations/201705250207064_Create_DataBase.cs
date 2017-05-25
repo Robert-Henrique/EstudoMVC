@@ -3,7 +3,7 @@ namespace Repository.DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Area : DbMigration
+    public partial class Create_DataBase : DbMigration
     {
         public override void Up()
         {
@@ -12,7 +12,7 @@ namespace Repository.DAL.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Nome = c.String(nullable: false),
+                        Nome = c.String(nullable: false, maxLength: 80),
                         Ativo = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);

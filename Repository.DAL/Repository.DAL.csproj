@@ -50,9 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\DbTeste.cs" />
-    <Compile Include="Migrations\201705231330531_Area.cs" />
-    <Compile Include="Migrations\201705231330531_Area.Designer.cs">
-      <DependentUpon>201705231330531_Area.cs</DependentUpon>
+    <Compile Include="Migrations\201705250207064_Create_DataBase.cs" />
+    <Compile Include="Migrations\201705250207064_Create_DataBase.Designer.cs">
+      <DependentUpon>201705250207064_Create_DataBase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,8 +71,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705231330531_Area.resx">
-      <DependentUpon>201705231330531_Area.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705250207064_Create_DataBase.resx">
+      <DependentUpon>201705250207064_Create_DataBase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

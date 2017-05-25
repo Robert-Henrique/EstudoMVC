@@ -11,11 +11,6 @@ namespace Repository.DAL.Repository.Base
 {
     public sealed class Repository<T> : IRepository<T> where T : class
     {
-        //public BaseBusiness(IRepository<T> repository)
-        //{
-        //    Repository = repository;
-        //}
-
         public Repository(DbContext dbContext)
         {
             Contexto = dbContext;

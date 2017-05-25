@@ -11,6 +11,8 @@ namespace Repository.DAL.Repository.Base
         void Cadastrar(T entidade);
         void Detach(object entidade);
         void Excluir(T entidade);
+        void Commit();
+        void Dispose();
         IQueryable<T> Obter(bool noTraking = false);
         IQueryable<T> Obter(int id);
         IQueryable<T> Obter(Expression<Func<T, bool>> criterios, bool refreshQuery = false);

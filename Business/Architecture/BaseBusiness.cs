@@ -22,6 +22,7 @@ namespace Business
         public virtual T Cadastrar(T entidade)
         {
             Repository.Cadastrar(entidade);
+            Repository.Commit();
 
             return entidade;
         }

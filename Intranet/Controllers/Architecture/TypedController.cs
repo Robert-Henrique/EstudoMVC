@@ -24,7 +24,7 @@ namespace Intranet.Controllers.Architecture
             Business = business;
         }
 
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return View();
         }
