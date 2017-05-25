@@ -11,5 +11,31 @@ namespace Repository.DAL.Context
         public DbSet<Permissao> Permissao { get; set; }
         public DbSet<Perfil> Perfil { get; set; }
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Pessoa> Pessoa { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Usuario>()
+               .HasMany<Permissao>(s => s.Permissoes)
+               .WithMany(c => c.Usuarios)
+               .Map(cs =>
+               {
+                   cs.MapLeftKey("UsuarioId");
+                   cs.MapRightKey("PermissaoId");
+                   cs.ToTable("PermissaoUsuario");
+               });
+
+            modelBuilder.Entity<Perfil>()
+               .HasMany<Permissao>(s => s.Permissoes)
+               .WithMany(c => c.Perfis)
+               .Map(cs =>
+               {
+                   cs.MapLeftKey("PerfilId");
+                   cs.MapRightKey("PermissaoId");
+                   cs.ToTable("PerfilPermissao");
+               });
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

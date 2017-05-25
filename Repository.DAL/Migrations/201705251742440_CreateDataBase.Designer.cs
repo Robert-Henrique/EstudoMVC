@@ -7,13 +7,13 @@ namespace Repository.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Tabela_Permissao : IMigrationMetadata
+    public sealed partial class CreateDataBase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Tabela_Permissao));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateDataBase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705250222198_Tabela_Permissao"; }
+            get { return "201705251742440_CreateDataBase"; }
         }
         
         string IMigrationMetadata.Source

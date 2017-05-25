@@ -50,13 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\DbTeste.cs" />
-    <Compile Include="Migrations\201705250207064_Create_DataBase.cs" />
-    <Compile Include="Migrations\201705250207064_Create_DataBase.Designer.cs">
-      <DependentUpon>201705250207064_Create_DataBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705250222198_Tabela_Permissao.cs" />
-    <Compile Include="Migrations\201705250222198_Tabela_Permissao.Designer.cs">
-      <DependentUpon>201705250222198_Tabela_Permissao.cs</DependentUpon>
+    <Compile Include="Migrations\201705251742440_CreateDataBase.cs" />
+    <Compile Include="Migrations\201705251742440_CreateDataBase.Designer.cs">
+      <DependentUpon>201705251742440_CreateDataBase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,11 +71,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705250207064_Create_DataBase.resx">
-      <DependentUpon>201705250207064_Create_DataBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705250222198_Tabela_Permissao.resx">
-      <DependentUpon>201705250222198_Tabela_Permissao.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705251742440_CreateDataBase.resx">
+      <DependentUpon>201705251742440_CreateDataBase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

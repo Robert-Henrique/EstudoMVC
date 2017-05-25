@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Repository.DataModel
@@ -6,6 +7,12 @@ namespace Repository.DataModel
     [Table("Permissao")]
     public class Permissao
     {
+        public Permissao()
+        {
+            this.Usuarios = new HashSet<Usuario>();
+            this.Perfis = new HashSet<Perfil>();
+        }
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
@@ -41,5 +48,9 @@ namespace Repository.DataModel
         public bool Ativo { get; set; }
 
         public virtual Area Area { get; set; }
+
+        public virtual ICollection<Usuario> Usuarios { get; set; }
+
+        public virtual ICollection<Perfil> Perfis { get; set; }
     }
 }
