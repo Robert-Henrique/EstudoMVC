@@ -27,6 +27,7 @@ namespace Repository.DataModel
         public bool Ativo { get; set; }
 
         public virtual ICollection<Perfil> Perfis { get; set; }
+        
         public virtual Perfil Parent { get; set; }
         public virtual ICollection<Usuario> Usuarios { get; set; }
         public virtual ICollection<Permissao> Permissoes { get; set; }

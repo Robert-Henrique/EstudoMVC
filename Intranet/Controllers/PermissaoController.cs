@@ -17,10 +17,5 @@ namespace Intranet.Controllers
         {
             throw new NotImplementedException();
         }
-
-        public override JsonResult Obter(int? Id)
-        {
-            return base.Obter(Id);
-        }
     }
 }

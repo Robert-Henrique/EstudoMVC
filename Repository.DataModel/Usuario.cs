@@ -33,6 +33,8 @@ namespace Repository.DataModel
 
         public virtual Pessoa Pessoa { get; set; }
 
+        public virtual Perfil Perfil { get; set; }
+
         public virtual ICollection<Permissao> Permissoes { get; set; }
     }
 }

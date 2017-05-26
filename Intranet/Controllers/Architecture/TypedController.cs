@@ -34,7 +34,7 @@ namespace Intranet.Controllers.Architecture
         {
             return View("Form");
         }
-        
+
         [HttpGet]
         public virtual ActionResult Alterar(string id)
         {
@@ -45,7 +45,7 @@ namespace Intranet.Controllers.Architecture
 
             return View("Form", iid);
         }
-      
+
         [HttpGet]
         public virtual ActionResult Visualizar(string id)
         {
@@ -94,12 +94,9 @@ namespace Intranet.Controllers.Architecture
         }
 
         [HttpGet]
-        public virtual JsonResult Obter(int? Id)
+        public virtual ActionResult Obter(string id)
         {
-            if (Id.HasValue)
-                return Json(Business.Obter(Convert.ToInt32(Id)), JsonRequestBehavior.AllowGet);
-
-            return Json(Business.Obter().ToList(), JsonRequestBehavior.AllowGet);
+            return Json(Business.Obter(id));
         }
 
         [HttpPost]

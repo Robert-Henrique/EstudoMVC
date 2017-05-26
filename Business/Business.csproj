@@ -61,6 +61,7 @@
     <Compile Include="Architecture\BusinessException.cs" />
     <Compile Include="PermissaoBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Repository.DAL\Repository.DAL.csproj">
