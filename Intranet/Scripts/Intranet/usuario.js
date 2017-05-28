@@ -23,10 +23,11 @@
 
     $.ajax({
         type: "Get",
-        url: "/Usuario/Obter",
+        url: "/Usuario/Obter/1", //passar para a controller o id do usuário logado
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (data) {
+            self.Permissoes(data.Permissoes);
             console.log(data);
         },
         error: function (error) {

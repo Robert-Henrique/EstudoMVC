@@ -10,19 +10,15 @@
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/css/mouldifi-core.css" rel="stylesheet" />
     <link href="~/Content/css/mouldifi-forms.css" rel="stylesheet" />
+
     <script src="~/Content/js/jquery.min.js"></script>
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script src="~/Scripts/knockout-2.2.0.js"></script>
-    <script src="~/Content/js/bootstrap.min.js"></script>
-    <script src="~/Content/js/plugins/metismenu/jquery.metisMenu.js"></script>
-    <script src="~/Content/js/plugins/blockui-master/jquery-ui.js"></script>
-    <script src="~/Content/js/plugins/blockui-master/jquery.blockUI.js"></script>
-    <script src="~/Content/js/functions.js"></script>
-    <script src="~/Scripts/Intranet/area.js"></script>
+    <script src="~/Scripts/Intranet/usuario.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
-            var viewModel = new Area();
+            var viewModel = new Usuario();
             ko.applyBindings(viewModel);
         });
     </script>
@@ -38,9 +34,14 @@
             </header>
             <!-- /site header -->
             <!-- Main navigation -->
-            <ul id="side-nav" class="main-menu navbar-collapse collapse" data-bind="foreach: Areas">
-                <li class="has-sub active">
-                    <a href="~/Home"><i class="icon-layout"></i><span class="title" data-bind="text: Nome"></span></a>
+            <ul id="side-nav" class="main-menu navbar-collapse collapse" data-bind="foreach: Permissoes">
+                <li data-bind="attr: {'class': $index() == 0 ? 'has-sub active' : 'has-sub'}">
+                    <a href="#"><i data-bind="attr: {'class': $index() == 0 ? 'icon-gauge' : 'icon-layout'}"></i><span class="title" data-bind="text: Area.Nome + ' - ' + Nome"></span></a>
+                    <ul data-bind="foreach: SubPermissoes, attr: {'class': $index() == 0 ? 'nav' : 'nav collapse'}">
+                        <li>
+                            <a href="~/Home"><span class="title" data-bind="text: Nome"></span></a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
             <!-- /main navigation -->
@@ -98,5 +99,11 @@
     </div>
     <!-- /page container -->
     <!--Load JQuery-->
+    <script src="~/Content/js/jquery.min.js"></script>s
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/plugins/metismenu/jquery.metisMenu.js"></script>
+    <script src="~/Content/js/plugins/blockui-master/jquery-ui.js"></script>
+    <script src="~/Content/js/plugins/blockui-master/jquery.blockUI.js"></script>
+    <script src="~/Content/js/functions.js"></script>
 </body>
 </html>

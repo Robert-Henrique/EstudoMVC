@@ -13,7 +13,7 @@ namespace Repository.DAL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201705261855175_CreateDataBase"; }
+            get { return "201705280133467_CreateDataBase"; }
         }
         
         string IMigrationMetadata.Source

@@ -31,6 +31,21 @@ namespace Intranet.Controllers
                 usuario.Ativo,
                 Nome = usuario.Pessoa.Nome,
                 NomePerfil = usuario.Perfil.Nome,
+                Permissoes = usuario.Permissoes.Where(p => p.PermissaoId == null).Select(p => new
+                {
+                    Id = p.Id,
+                    Nome = p.Nome,
+                    Area = new
+                    {
+                        Id = p.Area.Id,
+                        Nome = p.Area.Nome
+                    },
+                    SubPermissoes = usuario.Permissoes.Where(pe => pe.PermissaoId.Equals(p.Id)).OrderBy(pe => pe.Nome).Select(pe => new
+                    {
+                        Id = pe.Id,
+                        Nome = pe.Nome
+                    })
+                })
             }, JsonRequestBehavior.AllowGet);
         }
     }
