@@ -49,7 +49,7 @@
             <ul id="side-nav" class="main-menu navbar-collapse collapse" data-bind="foreach: Permissoes">
                 <li data-bind="attr: {'class': $index() == 0 ? 'has-sub active' : 'has-sub'}">
                     <a href="#"><i data-bind="attr: {'class': $index() == 0 ? 'icon-gauge' : 'icon-layout'}"></i><span class="title" data-bind="text: Area.Nome + ' - ' + Nome"></span></a>
-                    <ul data-bind="foreach: SubPermissoes, attr: {'class': $index() == 0 ? 'nav' : 'nav collapse'}">
+                    <ul data-bind="foreach: PermissoesNivel2, attr: {'class': $index() == 0 ? 'nav' : 'nav collapse'}">
                         <li>
                             <a data-bind="attr: {'href': Url }"><span class="title" data-bind="text: Nome"></span></a>
                         </li>

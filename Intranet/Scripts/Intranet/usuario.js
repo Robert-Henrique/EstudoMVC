@@ -27,7 +27,7 @@
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (data) {
-            self.Permissoes(data.Permissoes);
+            self.Permissoes(data.PermissoesNivel1);
         },
         error: function (error) {
             alert(error.status + " - " + error.statusText);
