@@ -31,7 +31,7 @@ namespace Intranet.Controllers
                 usuario.Ativo,
                 Nome = usuario.Pessoa.Nome,
                 NomePerfil = usuario.Perfil.Nome,
-                Permissoes = usuario.Permissoes.Where(p => p.PermissaoId == null).Select(p => new
+                PermissoesNivel1 = usuario.Permissoes.Where(p => p.PermissaoId == null).Select(p => new
                 {
                     Id = p.Id,
                     Nome = p.Nome,
@@ -40,10 +40,18 @@ namespace Intranet.Controllers
                         Id = p.Area.Id,
                         Nome = p.Area.Nome
                     },
-                    SubPermissoes = usuario.Permissoes.Where(pe => pe.PermissaoId.Equals(p.Id)).OrderBy(pe => pe.Nome).Select(pe => new
+                    PermissoesNivel2 = usuario.Permissoes.Where(pe => pe.PermissaoId.Equals(p.Id)).OrderBy(pe => pe.Nome).Select(pe => new
                     {
                         Id = pe.Id,
-                        Nome = pe.Nome
+                        Nome = pe.Nome,
+                        Url = pe.ControllerName != null ? Request.Url.Scheme + "://" + Request.Url.Host + ":" + Request.Url.Port + "/" + pe.ControllerName + "/" + pe.ActionName : string.Empty,
+
+                        PermissoesNivel3 = usuario.Permissoes.Where(p2 => p2.PermissaoId.Equals(pe.Id)).OrderBy(p2 => pe.Nome).Select(p2 => new {
+
+                            Id = p2.Id,
+                            Nome = p2.Nome,
+                            Url = p2.ControllerName != null ? Request.Url.Scheme + "://" + Request.Url.Host + ":" + Request.Url.Port + "/" + p2.ControllerName + "/" + p2.ActionName : string.Empty,
+                        })
                     })
                 })
             }, JsonRequestBehavior.AllowGet);

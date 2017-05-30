@@ -28,7 +28,6 @@
         dataType: "json",
         success: function (data) {
             self.Permissoes(data.Permissoes);
-            console.log(data);
         },
         error: function (error) {
             alert(error.status + " - " + error.statusText);

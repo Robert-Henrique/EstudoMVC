@@ -11,7 +11,14 @@
     <link href="~/Content/css/mouldifi-core.css" rel="stylesheet" />
     <link href="~/Content/css/mouldifi-forms.css" rel="stylesheet" />
 
+    <!--Load JQuery-->
     <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/plugins/metismenu/jquery.metisMenu.js"></script>
+    <script src="~/Content/js/plugins/blockui-master/jquery-ui.js"></script>
+    <script src="~/Content/js/plugins/blockui-master/jquery.blockUI.js"></script>
+    <script src="~/Content/js/functions.js"></script>
+
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script src="~/Scripts/knockout-2.2.0.js"></script>
     <script src="~/Scripts/Intranet/usuario.js"></script>
@@ -21,9 +28,14 @@
             var viewModel = new Usuario();
             ko.applyBindings(viewModel);
         });
+
+        function habilitarMenu() {
+            $('#side-nav').metisMenu();
+        }
+
     </script>
 </head>
-<body>
+<body onload="habilitarMenu()">
     <div class="page-container">
         <div class="page-sidebar">
             <!-- Site header  -->
@@ -39,7 +51,7 @@
                     <a href="#"><i data-bind="attr: {'class': $index() == 0 ? 'icon-gauge' : 'icon-layout'}"></i><span class="title" data-bind="text: Area.Nome + ' - ' + Nome"></span></a>
                     <ul data-bind="foreach: SubPermissoes, attr: {'class': $index() == 0 ? 'nav' : 'nav collapse'}">
                         <li>
-                            <a href="~/Home"><span class="title" data-bind="text: Nome"></span></a>
+                            <a data-bind="attr: {'href': Url }"><span class="title" data-bind="text: Nome"></span></a>
                         </li>
                     </ul>
                 </li>
@@ -98,12 +110,5 @@
 
     </div>
     <!-- /page container -->
-    <!--Load JQuery-->
-    <script src="~/Content/js/jquery.min.js"></script>s
-    <script src="~/Content/js/bootstrap.min.js"></script>
-    <script src="~/Content/js/plugins/metismenu/jquery.metisMenu.js"></script>
-    <script src="~/Content/js/plugins/blockui-master/jquery-ui.js"></script>
-    <script src="~/Content/js/plugins/blockui-master/jquery.blockUI.js"></script>
-    <script src="~/Content/js/functions.js"></script>
 </body>
 </html>
