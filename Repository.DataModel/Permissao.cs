@@ -11,6 +11,7 @@ namespace Repository.DataModel
         {
             this.Usuarios = new HashSet<Usuario>();
             this.Perfis = new HashSet<Perfil>();
+            this.Permissoes = new HashSet<Permissao>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -47,6 +48,10 @@ namespace Repository.DataModel
         public bool Ativo { get; set; }
 
         public virtual Area Area { get; set; }
+
+        public virtual ICollection<Permissao> Permissoes { get; set; }
+
+        public virtual Permissao Parent { get; set; }
 
         public virtual ICollection<Usuario> Usuarios { get; set; }
 
